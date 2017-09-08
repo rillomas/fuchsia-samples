@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.8)
+project(namespaces)
+set(FUCHSIA_ROOT /home/masato/fuchsia)
+set(FUCHSIA_SYSROOT ${FUCHSIA_ROOT}/out/build-magenta/build-magenta-pc-x86-64/sysroot)
+set(FUCHSIA_TARGET x86_64-fuchsia)
+set(CMAKE_CXX_FLAGS "--sysroot=${FUCHSIA_SYSROOT} --target=${FUCHSIA_TARGET}")
+add_executable(namespaces namespaces.cpp)
+target_link_libraries(namespaces mxio)
